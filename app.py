@@ -14,56 +14,182 @@ st.set_page_config(
 # -----------------------------
 st.markdown("""
 <style>
-    .stApp {
-        background: linear-gradient(180deg, #fffaf0 0%, #f7f2e8 100%);
-    }
-    .hero {
-        padding: 2.2rem;
-        border-radius: 24px;
-        background: linear-gradient(135deg, #204f32, #4d7c46);
-        color: white;
-        box-shadow: 0 12px 30px rgba(32,79,50,.18);
-        margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-        font-size: 3rem;
-        margin: 0;
-    }
-    .hero p {
-        font-size: 1.1rem;
-        margin-top: .7rem;
-        margin-bottom: 0;
-    }
-    .card {
-        background: white;
-        border-radius: 20px;
-        padding: 1.3rem;
-        border: 1px solid #eadfca;
-        box-shadow: 0 8px 22px rgba(82,64,38,.07);
-        margin-bottom: 1rem;
-    }
-    .price {
-        font-size: 1.7rem;
-        font-weight: 800;
-        color: #204f32;
-    }
-    .small-note {
-        font-size: .9rem;
-        color: #5d5d5d;
-    }
-    .order-box {
-        background: #ffffff;
-        border-left: 6px solid #e58c2b;
-        border-radius: 16px;
-        padding: 1.2rem 1.4rem;
-        box-shadow: 0 8px 22px rgba(82,64,38,.08);
-    }
-    div.stButton > button {
-        width: 100%;
-        border-radius: 12px;
-        font-weight: 700;
-        min-height: 3rem;
-    }
+
+/* Fondo general de la aplicación */
+.stApp {
+    background: linear-gradient(180deg, #fffaf0 0%, #f7f2e8 100%);
+    color: #26352b !important;
+}
+
+/* Color general del texto */
+html, body, [class*="css"] {
+    color: #26352b !important;
+}
+
+/* Encabezado principal */
+.hero {
+    padding: 2.2rem;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #204f32, #4d7c46);
+    color: white !important;
+    box-shadow: 0 12px 30px rgba(32,79,50,.18);
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: white !important;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-top: .7rem;
+    margin-bottom: 0;
+    color: white !important;
+}
+
+/* Títulos generales */
+h1, h2, h3, h4, h5, h6 {
+    color: #204f32 !important;
+}
+
+/* Tarjetas del menú */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.3rem;
+    border: 1px solid #d8c9af;
+    box-shadow: 0 8px 22px rgba(82,64,38,.10);
+    margin-bottom: 1rem;
+    min-height: 215px;
+}
+
+.card h3 {
+    color: #204f32 !important;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #4f554f !important;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #204f32 !important;
+    margin-top: 1rem;
+}
+
+/* Texto pequeño */
+.small-note {
+    font-size: .9rem;
+    color: #5d5d5d !important;
+}
+
+/* Resumen del pedido */
+.order-box {
+    background: #ffffff;
+    border-left: 6px solid #e58c2b;
+    border-radius: 16px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 8px 22px rgba(82,64,38,.08);
+}
+
+.order-box h3 {
+    color: #204f32 !important;
+}
+
+.order-box p {
+    color: #333333 !important;
+}
+
+/* Texto de las pestañas */
+button[data-baseweb="tab"] {
+    color: #204f32 !important;
+    font-weight: 700 !important;
+}
+
+/* Pestaña seleccionada */
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #d85b38 !important;
+}
+
+/* Etiquetas de formularios */
+label,
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label,
+.stMultiSelect label,
+.stNumberInput label,
+.stRadio label {
+    color: #26352b !important;
+    font-weight: 650 !important;
+}
+
+/* Campos de texto */
+input,
+textarea {
+    color: #26352b !important;
+    background-color: #ffffff !important;
+}
+
+/* Selectores y multiselect */
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    color: #26352b !important;
+}
+
+/* Texto dentro de selectores */
+div[data-baseweb="select"] span {
+    color: #26352b !important;
+}
+
+/* Botones */
+div.stButton > button,
+div.stDownloadButton > button,
+div[data-testid="stFormSubmitButton"] > button {
+    width: 100%;
+    border-radius: 12px;
+    font-weight: 700;
+    min-height: 3rem;
+    background-color: #d85b38;
+    color: white !important;
+    border: none;
+}
+
+div.stButton > button:hover,
+div.stDownloadButton > button:hover,
+div[data-testid="stFormSubmitButton"] > button:hover {
+    background-color: #b9472a;
+    color: white !important;
+}
+
+/* Barra lateral */
+section[data-testid="stSidebar"] {
+    background-color: #edf3e8;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label {
+    color: #26352b !important;
+}
+
+/* Cuadros success, info y warning */
+div[data-testid="stAlert"] p {
+    color: #26352b !important;
+}
+
+/* Texto normal de Streamlit */
+p, li, span {
+    color: #26352b;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
